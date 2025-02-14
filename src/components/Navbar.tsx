@@ -1,25 +1,38 @@
-
 // "use client"
 
-import type React from "react"
-import { useState } from "react"
-import { Moon, Sun, Menu } from "lucide-react"
-import { useTheme } from "./ThemeContext"
+import type React from "react";
+import { useState } from "react";
+import { Moon, Sun, Menu } from "lucide-react";
+import { useTheme } from "./ThemeContext";
 
 const Navbar: React.FC = () => {
-  const { isDarkMode, toggleTheme } = useTheme()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { isDarkMode, toggleTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-  ]
+    { name: "About", href: "about" },
+    { name: "Skills", href: "skills" },
+    { name: "Projects", href: "projects" },
+  ];
+  const handleSrcoll = (id: string): void => {
+    const section = document.getElementById(id);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 70,
+        behavior: "smooth",
+      });
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
-    <nav className={`${isDarkMode ?"bg-gray-900 text-white": "bg-white text-black" } top-0 left-0 z-50 fixed w-full shadow-2xl`}>
+    <nav
+      className={`${
+        isDarkMode ? "bg-gray-900 text-white" : "bg-white text-black"
+      } top-0 left-0 z-50 fixed w-full shadow-2xl`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -29,6 +42,10 @@ const Navbar: React.FC = () => {
             <div className="ml-96 flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSrcoll(item.href);
+                  }}
                   key={item.name}
                   href={item.href}
                   className="hover:underline cursor-pointer px-3 py-2 rounded-md text-md "
@@ -57,25 +74,27 @@ const Navbar: React.FC = () => {
 
       <aside
         className={`fixed right-0 top-[64px] z-20 h-[calc(100vh-64px)] w-64 transform overflow-y-auto shadow-lg transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
         } ${isDarkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}
-        >
+      >
         <div className="px-4 pt-4 pb-6 space-y-2">
-            {navItems.map((item) => (
+          {navItems.map((item) => (
             <a
-                key={item.name}
-                href={item.href}
-                className="block px-4 py-2 rounded-md text-base font-medium hover:underline"
-                onClick={() => setIsMenuOpen(false)}
+              key={item.name}
+              href={item.href}
+              className="block px-4 py-2 rounded-md text-base font-medium hover:underline"
+              onClick={(e) => {
+                e.preventDefault();
+                handleSrcoll(item.href);
+              }}
             >
-                {item.name}
+              {item.name}
             </a>
-            ))}
+          ))}
         </div>
-        </aside>
+      </aside>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
-
+export default Navbar;
