@@ -24,7 +24,7 @@ const projects = [
     description: "A modern, responsive portfolio website developed using React and TypeScript. It showcases my skills, projects, and experiences with smooth animations. The project highlights dynamic UI components and optimized performance.",
     image: assets.portfolio,
     liveDemo: "https://prasoonpr.tech/",
-    github: "https://github.com/prasoonpr/Ecom_front_end"
+    github: "https://github.com/prasoonpr/portfolio"
   }
 ];
 
