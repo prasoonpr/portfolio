@@ -31,10 +31,10 @@ const Profile: React.FC<SessionProps> = ({ id }) => {
   }, [showPopup]);
 
   const handleDownloadCV = () => {
-    const cvUrl = "/Prasoon_Resume.pdf";
+    const cvUrl = "/prasoonpr.pdf";
     const link = document.createElement("a");
     link.href = cvUrl;
-    link.download = "Prasoon_Resume.pdf";
+    link.download = "prasoonpr.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

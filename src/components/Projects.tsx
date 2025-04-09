@@ -20,11 +20,11 @@ const projects = [
     github: "https://github.com/prasoonpr/Ecom_front_end"
   },
   {
-    title: "Personal Portfolio ",
-    description: "A modern, responsive portfolio website developed using React and TypeScript. It showcases my skills, projects, and experiences with smooth animations. The project highlights dynamic UI components and optimized performance.",
-    image: assets.portfolio,
-    liveDemo: "https://prasoonpr.tech/",
-    github: "https://github.com/prasoonpr/portfolio"
+    title: "Mini Job Portal",
+    description: "A full-stack job portal application built with Next.js, NestJS, and Mantine UI. It features job posting and listing functionalities for admins, and job filtering for users. Designed with a clean UI and efficient architecture, this project demonstrates solid integration between frontend and backend with real-time updates and optimized data handling.",
+    image: assets.jobportal,
+    liveDemo: "https://jobportal.prasoonpr.tech/",
+    github: "https://github.com/prasoonpr/job_portal_front_end"
   }
 ];
 
