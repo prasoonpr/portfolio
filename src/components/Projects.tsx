@@ -21,7 +21,7 @@ const projects = [
   },
   {
     title: "Mini Job Portal",
-    description: "A full-stack job portal application built with Next.js, NestJS, and Mantine UI. It features job posting and listing functionalities for admins, and job filtering for users. Designed with a clean UI and efficient architecture, this project demonstrates solid integration between frontend and backend with real-time updates and optimized data handling.",
+    description: "A full-stack job portal application built with Next.js, NestJS, and Mantine UI. It features job posting and listing functionalities for admins, and job filtering for users. Designed with a clean UI and efficient architecture.",
     image: assets.jobportal,
     liveDemo: "https://jobportal.prasoonpr.tech/",
     github: "https://github.com/prasoonpr/job_portal_front_end"
